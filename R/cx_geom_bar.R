@@ -1,12 +1,19 @@
-#'use
+#' Geom Bar
+#'
+#' Generate a CanvasXpress Barplot
+#'
+#' @param gg
+#' @param cx
+#'
+#' @return CanvasXpress Barplot
+#' @export
+#'
+#' @examples
+#'
+#' # Example usage
+#' cx_geom_bar(dat, cx)
 #'
 #'
-#'
-#'
-#'
-
-
-
 
 cx_geom_bar <- function(gg, cx) {
   if (!isFALSE(gg$GeomBar$geomHistogram)) {
