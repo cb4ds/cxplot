@@ -2,10 +2,23 @@
 % Please edit documentation in R/cx_geom_bar.R
 \name{cx_geom_bar}
 \alias{cx_geom_bar}
-\title{use}
+\title{Geom Bar}
 \usage{
 cx_geom_bar(gg, cx)
 }
+\arguments{
+\item{cx}{}
+}
+\value{
+CanvasXpress Barplot
+}
 \description{
-use
+Generate a CanvasXpress Barplot
+}
+\examples{
+
+# Example usage
+cx_geom_bar(dat, cx)
+
+
 }
