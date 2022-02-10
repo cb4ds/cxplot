@@ -9,6 +9,8 @@
 #' @return
 #' @export
 #'
+#' @import ggplot2
+#'
 #' @examples
 gg_append <- function (a, b) {
   l = c(a[setdiff(names(a), names(b))], b)
@@ -547,28 +549,6 @@ gg_data_summary <- function(gg) {
 #'
 #' @examples
 cxplot <- function (o = ggplot2::last_plot()) {
-
-  library(ggplot2)
-  library(dplyr)
-  library(stringr)
-  library(canvasXpress)
-  source('cx_data.r')
-  source('cx_axes.r')
-  source('cx_theme.r')
-  source('cx_facet.r')
-  source('cx_geom_bar.r')
-  source('cx_geom_boxplot.r')
-  source('cx_geom_contour.r')
-  source('cx_geom_density.r')
-  source('cx_geom_histogram.r')
-  source('cx_geom_line.r')
-  source('cx_geom_point.r')
-  source('cx_geom_quantile.r')
-  source('cx_geom_rug.r')
-  source('cx_geom_smooth.r')
-  source('cx_geom_text.r')
-  source('cx_geom_violin.r')
-  source('cx_geom_xline.r')
 
   if (missing(o)) {
     o = last_plot()
