@@ -2,9 +2,14 @@
 # Copyright(c) Aggregate Genius Inc.
 # ----------------------------------
 
-# devtools::load_all()
+#devtools::install_local('cxplot_0.0.0.9000.tar.gz')
 
-data(iris)
+library(cxplot)
 
+data(mpg)
+data(diamonds)
 
-cxplot::cxplot()
+cxplot(ggplot2::ggplot(mpg, aes(class))
+       + geom_bar())
+
+cxplot(ggplot(diamonds, aes(carat)) + geom_histogram(binwidth = 0.01))

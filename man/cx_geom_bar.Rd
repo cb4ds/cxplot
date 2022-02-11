@@ -18,7 +18,7 @@ Generate a CanvasXpress Barplot
 \examples{
 
 # Example usage
-cx_geom_bar(dat, cx)
+# cx_geom_bar(dat, cx)
 
 
 }
