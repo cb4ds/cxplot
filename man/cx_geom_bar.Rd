@@ -4,7 +4,40 @@
 \alias{cx_geom_bar}
 \title{Geom Bar}
 \usage{
-cx_geom_bar(gg, cx)
+geom_bar({
+"mapping" = null,
+"data" = null,
+"stat" = "count",
+"position" = "stack","...",
+"width" = null,
+"na.rm" = false,
+"orientation" = NA,
+"show.legend" = NA,
+"inherit.aes" = true})
+
+geom_col({
+"mapping" = null,
+"data" = null,
+"position" = "stack",
+"...",
+"width" = null,
+"na.rm" = false,
+"show.legend" = NA,
+"inherit.aes" = true
+})
+
+stat_count({
+    "mapping" = null,
+    "data" = null,
+    "geom" = "bar",
+    "position" = "stack",
+    "...",
+    "width" = null,
+    "na.rm" = false,
+    "orientation" = NA,
+    "show.legend" = NA,
+    "inherit.aes" = true
+})
 }
 \arguments{
 \item{cx}{}
@@ -13,12 +46,12 @@ cx_geom_bar(gg, cx)
 CanvasXpress Barplot
 }
 \description{
-Generate a CanvasXpress Barplot
+Generate a CanvasXpress Barplot.
 }
-\examples{
-
-# Example usage
-# cx_geom_bar(dat, cx)
-
-
+\details{
+There are two types of bar charts: geom_bar() and geom_col(). geom_bar() makes the height of the bar proportional
+to the number of cases in each group (or if the weight aesthetic is supplied, the sum of the weights). If you
+want the heights of the bars to represent values in the data, use geom_col() instead. geom_bar() uses stat_count()
+by default: it counts the number of cases at each x position. geom_col() uses stat_identity(): it leaves the data
+as is.
 }

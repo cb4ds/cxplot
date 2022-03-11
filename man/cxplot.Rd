@@ -2,7 +2,7 @@
 % Please edit documentation in R/cxplot.R
 \name{cxplot}
 \alias{cxplot}
-\title{Title}
+\title{cxplot}
 \usage{
 cxplot(o = ggplot2::last_plot())
 }
@@ -13,5 +13,33 @@ cxplot(o = ggplot2::last_plot())
 
 }
 \description{
-Title
+Initializes a cxplot object.
+}
+\details{
+It can be used to declare the input data frame for a graphic, to specify the set of plot aesthetics intended to be
+common throughout all subsequent layers unless specifically overridden and custom mouse events.
+
+\code{cxplot()} is used to construct the initial plot object, and is almost always followed by cxp. to add component to the
+plot. There are three common ways to invoke \code{cxplot()}:
+
+\code{cxplot("targetId", df, aes("x", "y"))}
+
+\code{cxplot("targetId", df)}
+
+The first method is recommended if all layers use the same data and the same set of aesthetics, although this method
+can also be used to add a layer using data from another data frame. See the first example below. The second method
+specifies the default data frame to use for the plot, but no aesthetics are defined up front. This is useful when
+one data frame is used predominantly as layers are added, but the aesthetics may vary from one layer to another.
+}
+\examples{
+// Get the data froma a csv delimited file.
+var df = "https://www.cxplot.com/assets/data/mtcars.csv";
+var cxp = new cxplot("canvasId", df, aes("wt", "mpg"));
+cxp.geom_point();
+
+// Get the data froma a 2D array (like an R dataframe).
+var df = [["height", "weight"], [5.2, 130], [5.6, 150], [6.0, 200],
+          [5.8, 180], [5.9, 170], [5.5, 160], [5.7, 175]];
+var cxp = new cxplot("canvasId", df, aes("weight", "height"));
+cxp.geom_point();
 }

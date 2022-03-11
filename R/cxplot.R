@@ -12,6 +12,7 @@
 #' @import ggplot2
 #'
 #' @examples
+#'
 gg_append <- function (a, b) {
   l = c(a[setdiff(names(a), names(b))], b)
   l
@@ -540,14 +541,45 @@ gg_data_summary <- function(gg) {
   r
 }
 
-#' Title
+#' cxplot
 #'
-#' @param o
+#' Initializes a cxplot object.
+#'
+#' It can be used to declare the input data frame for a graphic, to specify the set of plot aesthetics intended to be
+#' common throughout all subsequent layers unless specifically overridden and custom mouse events.
+#'
+#' `cxplot()` is used to construct the initial plot object, and is almost always followed by cxp. to add component to the
+#' plot. There are three common ways to invoke `cxplot()`:
+#'
+#' `cxplot("targetId", df, aes("x", "y"))`
+#'
+#' `cxplot("targetId", df)`
+#'
+#' The first method is recommended if all layers use the same data and the same set of aesthetics, although this method
+#' can also be used to add a layer using data from another data frame. See the first example below. The second method
+#' specifies the default data frame to use for the plot, but no aesthetics are defined up front. This is useful when
+#' one data frame is used predominantly as layers are added, but the aesthetics may vary from one layer to another.
+#'
+#' @param targetId DOM id of the <canvas> element included in the <body> element of the web page where the graph will be rendered.
+#' @param data Default dataset to use for plot. If not specified, must be supplied in each layer added to the plot. It can be a link to a coma or tab delimited text file, a json representation of a two dimensional array or a CanvasXpress data obiject.
+#' @param mapping Default list of aesthetic mappings to use for plot. If not specified, must be supplied in each layer added to the plot.
+#' @param events json object with custom user-defined mouse events. This is optional as there are many out-of-the-box already provided.
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' // Get the data froma a csv delimited file.
+#' var df = "https://www.cxplot.com/assets/data/mtcars.csv";
+#' var cxp = new cxplot("canvasId", df, aes("wt", "mpg"));
+#' cxp.geom_point();
+#'
+#' // Get the data froma a 2D array (like an R dataframe).
+#' var df = [["height", "weight"], [5.2, 130], [5.6, 150], [6.0, 200],
+#'           [5.8, 180], [5.9, 170], [5.5, 160], [5.7, 175]];
+#' var cxp = new cxplot("canvasId", df, aes("weight", "height"));
+#' cxp.geom_point();
+
 cxplot <- function (o = ggplot2::last_plot()) {
 
   if (missing(o)) {
