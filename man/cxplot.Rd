@@ -7,7 +7,13 @@
 cxplot(o = ggplot2::last_plot())
 }
 \arguments{
-\item{o}{}
+\item{targetId}{DOM id of the <canvas> element included in the <body> element of the web page where the graph will be rendered.}
+
+\item{data}{Default dataset to use for plot. If not specified, must be supplied in each layer added to the plot. It can be a link to a coma or tab delimited text file, a json representation of a two dimensional array or a CanvasXpress data obiject.}
+
+\item{mapping}{Default list of aesthetic mappings to use for plot. If not specified, must be supplied in each layer added to the plot.}
+
+\item{events}{json object with custom user-defined mouse events. This is optional as there are many out-of-the-box already provided.}
 }
 \value{
 
