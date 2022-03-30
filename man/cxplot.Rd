@@ -38,14 +38,14 @@ specifies the default data frame to use for the plot, but no aesthetics are defi
 one data frame is used predominantly as layers are added, but the aesthetics may vary from one layer to another.
 }
 \examples{
-// Get the data froma a csv delimited file.
-var df = "https://www.cxplot.com/assets/data/mtcars.csv";
-var cxp = new cxplot("canvasId", df, aes("wt", "mpg"));
+\dontrun{
+df = "https://www.cxplot.com/assets/data/mtcars.csv";
+cxp = cxplot("canvasId", df, aes("wt", "mpg"));
 cxp.geom_point();
 
-// Get the data froma a 2D array (like an R dataframe).
-var df = [["height", "weight"], [5.2, 130], [5.6, 150], [6.0, 200],
+df = [["height", "weight"], [5.2, 130], [5.6, 150], [6.0, 200],
           [5.8, 180], [5.9, 170], [5.5, 160], [5.7, 175]];
-var cxp = new cxplot("canvasId", df, aes("weight", "height"));
+cxp = cxplot("canvasId", df, aes("weight", "height"));
 cxp.geom_point();
+}
 }

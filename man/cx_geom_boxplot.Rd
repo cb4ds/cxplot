@@ -76,18 +76,17 @@ The boxplot compactly displays the distribution of a continuous variable. It vis
 (the median, two hinges and two whiskers), and all "outlying" points individually.
 }
 \examples{
-\donttest{
-var cxp = new cxplot("canvas1", mpg, aes("class", "hwy"));
+\dontrun{
+cxp = cxplot("canvas1", mpg, aes("class", "hwy"));
 cxp.geom_boxplot();
 
-// Orientation follows the discrete axis
-var cxp = new cxplot("canvas2", mpg, aes("hwy", "class"));
+cxp = cxplot("canvas2", mpg, aes("hwy", "class"));
 cxp.geom_boxplot();
 
-var cxp = new cxplot("canvas3", mpg, aes("class", "hwy"));
+cxp = cxplot("canvas3", mpg, aes("class", "hwy"));
 cxp.geom_boxplot({"notch": true});
 
-var cxp = new cxplot("canvas4", mpg, aes("class", "hwy"));
+cxp = cxplot("canvas4", mpg, aes("class", "hwy"));
 cxp.geom_boxplot({"fill": "white", "color": "#3366FF"});
 }
 }
