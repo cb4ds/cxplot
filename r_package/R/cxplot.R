@@ -256,7 +256,7 @@ gg_mapping <- function(o) {
       l = as_label(o$mapping[[i]])
       f = regexpr("factor", l)[1]
       if (f > 0) {
-        l = str_replace(str_replace(l, "factor\\(", ""), "\\)", "")
+        l = stringr::str_replace(stringr::str_replace(l, "factor\\(", ""), "\\)", "")
         s = append(s , l)
         if (!(i %in% c('x', 'y', 'z'))) {
           r[[i]] = l
@@ -320,7 +320,7 @@ gg_proc_layer <- function (l) {
         b = as_label(l$mapping[[a]])
         f = regexpr("factor", b)[1]
         if (f > 0) {
-          b = str_replace(str_replace(b, "factor\\(", ""), "\\)", "")
+          b = stringr::str_replace(stringr::str_replace(b, "factor\\(", ""), "\\)", "")
           s = append(s , b)
           if (!(a %in% c('x', 'y', 'z'))) {
             r[[a]] = b
@@ -345,7 +345,7 @@ gg_proc_layer <- function (l) {
           b = l[[p]][[a]]
           f = regexpr("factor", b)[1]
           if (is.character(f) && f > 0) {
-            b = str_replace(str_replace(b, "factor\\(", ""), "\\)", "")
+            b = stringr::str_replace(stringr::str_replace(b, "factor\\(", ""), "\\)", "")
             s = append(s , b)
             r[[a]] = b
             if (a %in% c('colour', 'fill')) {
@@ -653,5 +653,5 @@ cxplot <- function (o = ggplot2::last_plot()) {
   #print(cx)
 
   print(o)
-  print (do.call(canvasXpress, cx))
+  print (do.call(canvasXpress::canvasXpress, cx))
 }

@@ -1,13 +1,20 @@
 ---
 title: "Geom Miscellaneous"
-output: geom_miscellaneous
+author: "Isaac Neuhaus"
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{geom miscellaneous}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r}
-source('cxplot.r')
 library(ggplot2)
 library(dplyr)
 library(canvasXpress)
+library(cxplot)
 ```
 
 https://www.datanovia.com/en/blog/ggplot-aes-how-to-assign-aesthetics-in-ggplot2/

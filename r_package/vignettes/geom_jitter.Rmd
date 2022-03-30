@@ -1,35 +1,38 @@
 ---
-title: "Geom Boxplot"
-output: geom_boxplot
+title: "Geom Jitter"
+author: "Isaac Neuhaus"
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{geom jitter}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
- https://ggplot2.tidyverse.org/reference/geom_boxplot.html
+ https://ggplot2.tidyverse.org/reference/geom_jitter.html
 
 ```{r}
-source('cxplot.r')
 library(ggplot2)
 library(dplyr)
 library(canvasXpress)
+library(cxplot)
 ``` 
 
 ```{r}
-cxplot(ggplot(mpg, aes(class, hwy)) + geom_boxplot())
+cxplot(ggplot(mpg, aes(cyl, hwy)) + geom_point())
 ```
 
 ```{r}
-cxplot(ggplot(mpg, aes(hwy, class)) + geom_boxplot())
+cxplot(ggplot(mpg, aes(cyl, hwy)) + geom_point() + geom_jitter())
 ```
 
 ```{r}
-cxplot(ggplot(mpg, aes(hwy, class)) + geom_boxplot(notch = TRUE))
+cxplot(ggplot(mpg, aes(cyl, hwy)) + geom_point() + geom_jitter(aes(colour = class)))
 ```
 
 ```{r}
-cxplot(ggplot(mpg, aes(class, hwy)) + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2))
-```
-
-```{r}
-cxplot(ggplot(mpg, aes(class, hwy)) + geom_boxplot(aes(colour = drv)))
+cxplot(ggplot(mpg, aes(cyl, hwy)) + geom_jitter(width = 0.25))
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.

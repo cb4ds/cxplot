@@ -1,13 +1,13 @@
 ---
-title: "cxplot"
-output: rmarkdown::html_vignette
+title: "cxplot package"
+author: "Isaac Neuhaus"
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{cxplot}
-  %\VignetteEncoding{UTF-8}
+  %\VignetteIndexEntry{cxplot package}
   %\VignetteEngine{knitr::rmarkdown}
-editor_options: 
-  markdown: 
-    wrap: 72
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup}

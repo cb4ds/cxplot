@@ -1,15 +1,22 @@
 ---
 title: "Geom Violin"
-output: geom_violin
+author: "Isaac Neuhaus"
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{geom violin}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
  https://ggplot2.tidyverse.org/reference/geom_violin.html
 
 ```{r}
-source('cxplot.r')
 library(ggplot2)
 library(dplyr)
 library(canvasXpress)
+library(cxplot)
 ``` 
 
 ```{r}

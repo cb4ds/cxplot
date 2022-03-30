@@ -25,10 +25,10 @@ cx_geom_violin <- function(gg, g) {
     r$showViolinQuantiles = TRUE
   }
   if (!is.null(gg$GeomViolin$colour) && !(gg$GeomViolin$colour %in% names(gg$data))) {
-    r$violinBorderColor = paste("rgb(", paste(col2rgb(gg$GeomViolin$colour)[,1], collapse = ","), ")", sep = "")
+    r$violinBorderColor = paste("rgb(", paste(grDevices::col2rgb(gg$GeomViolin$colour)[,1], collapse = ","), ")", sep = "")
   }
   if (!is.null(gg$GeomViolin$fill) && !(gg$GeomViolin$fill %in% names(gg$data))) {
-    r$violinColor = paste("rgb(", paste(col2rgb(gg$GeomViolin$fill)[,1], collapse = ","), ")", sep = "")
+    r$violinColor = paste("rgb(", paste(grDevices::col2rgb(gg$GeomViolin$fill)[,1], collapse = ","), ")", sep = "")
   }
   if (!("GeomBoxplot" %in% gg$geoms)) {
     r$showBoxplotIfViolin = FALSE

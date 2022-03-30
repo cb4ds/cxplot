@@ -1,50 +1,43 @@
 ---
-title: "Geom Histogram"
-output: geom_histogram
+title: "Geom Boxplot"
+author: "Isaac Neuhaus"
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{geom boxplot}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
- https://ggplot2.tidyverse.org/reference/geom_histogram.html
+
+ https://ggplot2.tidyverse.org/reference/geom_boxplot.html
 
 ```{r}
-source('cxplot.r')
 library(ggplot2)
 library(dplyr)
 library(canvasXpress)
+library(cxplot)
 ``` 
 
 ```{r}
-cxplot(ggplot(diamonds, aes(carat)) + geom_histogram())
+cxplot(ggplot(mpg, aes(class, hwy)) + geom_boxplot())
 ```
 
 ```{r}
-cxplot(ggplot(diamonds, aes(carat)) + geom_histogram(binwidth = 0.01))
+cxplot(ggplot(mpg, aes(hwy, class)) + geom_boxplot())
 ```
 
 ```{r}
-cxplot(ggplot(diamonds, aes(carat)) + geom_histogram(bins = 200))
+cxplot(ggplot(mpg, aes(hwy, class)) + geom_boxplot(notch = TRUE))
 ```
 
 ```{r}
-cxplot(ggplot(diamonds, aes(price, fill = cut)) + geom_histogram(binwidth = 500))
+cxplot(ggplot(mpg, aes(class, hwy)) + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2))
 ```
 
 ```{r}
-cxplot(ggplot(diamonds, aes(price, colour = cut)) + geom_freqpoly(binwidth = 500))
+cxplot(ggplot(mpg, aes(class, hwy)) + geom_boxplot(aes(colour = drv)))
 ```
-
-```{r}
-cxplot(ggplot(diamonds, aes(price, after_stat(density), colour = cut)) + geom_freqpoly(binwidth = 500))
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-
-
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
 

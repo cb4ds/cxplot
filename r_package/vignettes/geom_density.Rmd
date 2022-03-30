@@ -1,14 +1,22 @@
 ---
 title: "Geom Density"
-output: geom_density
+author: "Isaac Neuhaus"
+date: "`r Sys.Date()`"
+output: 
+    rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{geom density}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
+
  https://ggplot2.tidyverse.org/reference/geom_density.html
 
 ```{r}
-source('cxplot.r')
 library(ggplot2)
 library(dplyr)
 library(canvasXpress)
+library(cxplot)
 ``` 
 
 ```{r}
