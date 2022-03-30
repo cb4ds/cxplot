@@ -15,3 +15,6 @@ gg_append(a, b)
 \description{
 Title
 }
+\examples{
+
+}
